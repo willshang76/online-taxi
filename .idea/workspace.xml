@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Implement the VerificationCodeApplication and register to service registry.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Add VerificationCodeApplication.java to the project.">
+      <change afterPath="$PROJECT_DIR$/verification-code/verification-code/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/verification-code/verification-code/src/main/java/com/zhitong/verificationcode/VerificationCodeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/verification-code/verification-code/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/verification-code/verification-code/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_COMMON_BRANCH" value="verifyCodeE2E" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -209,7 +217,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702585569890</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add target folder to ignore.">
+      <option name="closed" value="true" />
+      <created>1702586297730</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702586297730</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add target folder to ignore.">
+      <option name="closed" value="true" />
+      <created>1702586337173</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702586337173</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +268,9 @@
     <MESSAGE value="Set up passenger api template code." />
     <MESSAGE value="Set up eureka registry." />
     <MESSAGE value="Implement the VerificationCodeApplication and register to service registry." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement the VerificationCodeApplication and register to service registry." />
+    <MESSAGE value="Add target folder to ignore." />
+    <MESSAGE value="Add VerificationCodeApplication.java to the project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add VerificationCodeApplication.java to the project." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
