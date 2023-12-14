@@ -18,8 +18,8 @@
     <modules>
         <module>api-passenger</module>
         <module>service-registry</module>
-        <module>verification-code</module>
         <module>internal-common</module>
+        <module>verification-code</module>
     </modules>
 
     <properties>
