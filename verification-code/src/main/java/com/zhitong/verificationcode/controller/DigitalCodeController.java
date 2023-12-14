@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DigitalCodeController {
 
-    @GetMapping("/digitalCode")
+    @GetMapping("/digitalCode0")
     public String digitalCode(@RequestParam("size") int size){
 
         // Version 1: Skeleton code.
@@ -27,11 +27,14 @@ public class DigitalCodeController {
         return result.toString();
     }
 
-    @GetMapping("/digitalCode2")
+    @GetMapping("/digitalCode")
     public ResponseResult digitalCode2(@RequestParam("size") int size){
 
         DigitalCodeResponse digitalCodeResponse = new DigitalCodeResponse();
-        digitalCodeResponse.setDigitalCode(generateCode(size));
+        int generatedDigitalCode = generateCode(size);
+        digitalCodeResponse.setDigitalCode(generatedDigitalCode);
+
+        System.out.println("generatedDigitalCode = " + generatedDigitalCode);
 
         return ResponseResult.success(digitalCodeResponse);
     }

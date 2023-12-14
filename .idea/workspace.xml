@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Add VerificationCodeApplication.java to the project.">
-      <change afterPath="$PROJECT_DIR$/verification-code/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/VerificationCodeApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/serviceclient/VerificationCodeClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/verification-code/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/PassengerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/PassengerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/VerificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/VerificationCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/datatoobject/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/datatoobject/ResponseResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +28,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -81,6 +86,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "/Users/qianzhang/Desktop/projects/OnlineTaxi/online-taxi/verification-code/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,6 +99,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/verification-code/src/main/resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode" />
     </key>
@@ -149,9 +158,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.PassengerApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
         <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
-        <item itemvalue="Spring Boot.PassengerApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
         <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
       </list>
@@ -240,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702586337173</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add VerificationCodeApplication.java to the project.">
+      <option name="closed" value="true" />
+      <created>1702587552156</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1702587552156</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +274,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="verifyCodeE2E" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>

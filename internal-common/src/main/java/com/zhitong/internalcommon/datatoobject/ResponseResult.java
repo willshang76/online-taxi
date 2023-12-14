@@ -11,6 +11,10 @@ public class ResponseResult<T> {
     private String message;
     private T payload;
 
+    public static <T> ResponseResult success() {
+        return new ResponseResult().setCode(ResponseStatus.SUCCESS.getCode()).setMessage(ResponseStatus.SUCCESS.getMessage());
+    }
+
     public static <T> ResponseResult success(T payload) {
         return new ResponseResult().setCode(ResponseStatus.SUCCESS.getCode()).setMessage(ResponseStatus.SUCCESS.getMessage()).setPayload(payload);
     }
