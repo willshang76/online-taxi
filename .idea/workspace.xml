@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/ResponseStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/datatoobject/ResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/response/DigitalCodeResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/VerificationCodeApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Implement the VerificationCodeApplication and register to service registry." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +20,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "willshang76"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="7d90668e-e7a7-4507-b5ae-1a08c83386a3" />
+        <option name="url" value="https://github.com/willshang76/online-taxi.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/verification-code/pom.xml" root0="SKIP_HIGHLIGHTING" />
@@ -156,7 +153,7 @@
       <workItem from="1701290794466" duration="2490000" />
       <workItem from="1701583956958" duration="5952000" />
       <workItem from="1702002841739" duration="3478000" />
-      <workItem from="1702580594545" duration="292000" />
+      <workItem from="1702580594545" duration="1047000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme file.">
       <option name="closed" value="true" />
@@ -182,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698479192206</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implement the VerificationCodeApplication and register to service registry.">
+      <option name="closed" value="true" />
+      <created>1702584393794</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702584393794</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Implement the VerificationCodeApplication and register to service registry.">
+      <option name="closed" value="true" />
+      <created>1702584701844</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702584701844</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +206,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -204,7 +229,8 @@
     <MESSAGE value="Add readme file." />
     <MESSAGE value="Set up passenger api template code." />
     <MESSAGE value="Set up eureka registry." />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up eureka registry." />
+    <MESSAGE value="Implement the VerificationCodeApplication and register to service registry." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement the VerificationCodeApplication and register to service registry." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
