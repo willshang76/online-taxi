@@ -1,0 +1,217 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+new file mode 100644
+--- /dev/null	(revision e6fa245a64df125a33303c2a25ff73d01870f4dd)
++++ b/pom.xml	(revision e6fa245a64df125a33303c2a25ff73d01870f4dd)
+@@ -0,0 +1,39 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++<modelVersion>4.0.0</modelVersion>
++<parent>
++    <groupId>com.zhitong</groupId>
++    <artifactId>online-taxi-public</artifactId>
++    <version>1.0-SNAPSHOT</version>
++</parent>
++<groupId>com.zhitong</groupId>
++<artifactId>verification-code</artifactId>
++<version>0.0.1-SNAPSHOT</version>
++<name>verification-code</name>
++<description>verification-code</description>
++
++<properties>
++    <maven.compiler.source>8</maven.compiler.source>
++    <maven.compiler.target>8</maven.compiler.target>
++    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++</properties>
++
++<dependencies>
++    <dependency>
++        <groupId>com.zhitong</groupId>
++        <artifactId>internal-common</artifactId>
++        <version>1.0-SNAPSHOT</version>
++    </dependency>
++    <dependency>
++        <groupId>org.springframework.cloud</groupId>
++        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
++    </dependency>
++    <dependency>
++        <groupId>org.springframework.boot</groupId>
++        <artifactId>spring-boot-starter-web</artifactId>
++    </dependency>
++</dependencies>
++
++</project>
+\ No newline at end of file
+Index: src/main/java/com/zhitong/verificationcode/VerificationCodeApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/zhitong/verificationcode/VerificationCodeApplication.java b/src/main/java/com/zhitong/verificationcode/VerificationCodeApplication.java
+new file mode 100644
+--- /dev/null	(revision e6fa245a64df125a33303c2a25ff73d01870f4dd)
++++ b/src/main/java/com/zhitong/verificationcode/VerificationCodeApplication.java	(revision e6fa245a64df125a33303c2a25ff73d01870f4dd)
+@@ -0,0 +1,14 @@
++package com.zhitong.verificationcode;
++
++import org.springframework.boot.SpringApplication;
++import org.springframework.boot.autoconfigure.SpringBootApplication;
++import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
++
++@SpringBootApplication
++@EnableDiscoveryClient
++public class VerificationCodeApplication {
++    public static void main(String[] args) {
++        SpringApplication.run(VerificationCodeApplication.class, args);
++    }
++
++}
+Index: src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java b/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java
+new file mode 100644
+--- /dev/null	(revision e6fa245a64df125a33303c2a25ff73d01870f4dd)
++++ b/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java	(revision e6fa245a64df125a33303c2a25ff73d01870f4dd)
+@@ -0,0 +1,42 @@
++package com.zhitong.verificationcode.controller;
++
++import com.zhitong.internalcommon.datatoobject.ResponseResult;
++import com.zhitong.internalcommon.response.DigitalCodeResponse;
++import net.sf.json.JSONObject;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PathVariable;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.bind.annotation.RestController;
++
++@RestController
++public class DigitalCodeController {
++
++    @GetMapping("/digitalCode")
++    public String digitalCode(@RequestParam("size") int size){
++
++        // Version 1: Skeleton code.
++        System.out.println("size = " + size);
++
++        JSONObject result = new JSONObject();
++        result.put("code", "201");
++        result.put("message", "success");
++        JSONObject payload = new JSONObject();
++        payload.put("digitalCode", generateCode(size));
++        result.put("payload", payload);
++
++        return result.toString();
++    }
++
++    @GetMapping("/digitalCode2")
++    public ResponseResult digitalCode2(@RequestParam("size") int size){
++
++        DigitalCodeResponse digitalCodeResponse = new DigitalCodeResponse();
++        digitalCodeResponse.setDigitalCode(generateCode(size));
++
++        return ResponseResult.success(digitalCodeResponse);
++    }
++
++    private int generateCode(int size) {
++        return (int) ((Math.random()*9 + 1) * Math.pow(10, size - 1));
++    }
++}
+Index: src/main/resources/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/application.yml b/src/main/resources/application.yml
+new file mode 100644
+--- /dev/null	(revision e6fa245a64df125a33303c2a25ff73d01870f4dd)
++++ b/src/main/resources/application.yml	(revision e6fa245a64df125a33303c2a25ff73d01870f4dd)
+@@ -0,0 +1,13 @@
++server:
++  port: 8082
++
++spring:
++  application:
++    name: verification-code
++
++eureka:
++  client:
++    serviceUrl:
++      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
++  instance:
++    preferIpAddress: true
+\ No newline at end of file
+Index: target/classes/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/application.yml b/target/classes/application.yml
+new file mode 100644
+--- /dev/null	(revision 018808b2b1dad11f6dcf71defde8103d9fa459b5)
++++ b/target/classes/application.yml	(revision 018808b2b1dad11f6dcf71defde8103d9fa459b5)
+@@ -0,0 +1,13 @@
++server:
++  port: 8082
++
++spring:
++  application:
++    name: verification-code
++
++eureka:
++  client:
++    serviceUrl:
++      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
++  instance:
++    preferIpAddress: true
+\ No newline at end of file
+diff --git a/target/classes/com/zhitong/verificationcode/VerificationCodeApplication.class b/target/classes/com/zhitong/verificationcode/VerificationCodeApplication.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..eef0d87a53fc0600dac668b1726e0369c3dd1584
+GIT binary patch
+literal 866
+zc$}S5O^?$s5Pj};n-U7UbYWrn65L7;_<|53Xr<i%r|=<)%7K%Ux~Z4Mt{i9i_*a}j
+z9QXnJD8x7|YLN;D5@|*=^X84;*gt-L`wrk9ZiZ-MKfvV>S8x#EDnsXy(#jn&Yz^*=
+z8QQU#NQRw6Y5BY^Q)yp|w4h8sF_|dF!YUsxlWjLs6~n_MGbR5tQ_kp|pGvEyDicl_
+zoe>)!uO&SF(R^Mk!-zOap)|w(;B9guP6aOnag3Z*I**zY37gZ5y$xlC-DlFx%;cr8
+zqLfZr0)`_~+e|)H{(!gsG5fCPV>ozKYo|&%R+S=AM_L=#)QRgbF*fJb+)tbO5$}zC
+z$5Ue*7qv5)(NmSzR`O8;Ii|v&;*K{GWQD0GWR=v8PgIo|+Sy0`MEk8i{vF3nJ?dc_
+z9fk-0yW#-Xdbo}ow5-(vU!*58a}2}3>RTvU<DnN~YqIHJ?IPkrR8_R;<~9pA+Q|=&
+z$IHcey=x=lMLEK4wCJJwuLb7ylMN{1<Qe(x;TN#aO}R_9(<IN(5A+rQggD#edN@ZY
+w-+aFz1G@dz@GG|7tolRpAbddR6-O86u|s~>^DzoM{6b^<*ju(;B!3C`1(BHV)Bpeg
+
+diff --git a/target/classes/com/zhitong/verificationcode/controller/DigitalCodeController.class b/target/classes/com/zhitong/verificationcode/controller/DigitalCodeController.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..a5c1163907ab797d87a2bcdec01b91cfd855a1fd
+GIT binary patch
+literal 2362
+zc$}qH>r&fB6#f<)<R}UR0|r7m1$wh7poFB9l#oDhlR#~tkV4a>mqlKTK-N0a8YX#x
+z{_B(UN82BUDKmY5K2)b?WrI!dWZJ|t+Lg}rJ7>>1>%af`^Dh9mabRKu3zzT!iw3eL
+zVpvGvOT9nT%Okx!HnD_d17DdiH9MC;Ucas+u$sVH0vQv-_}aueHWIKk>#>0+CQ?|?
+z%Qq%Av1Q_0JnfhtMfB^K|FHI=$=?}xX5cwP$6eQV)jft-I<v_TUz7#G(3Nw2u~I2*
+zi{J_0_K1?qNr!uzJaF}QofucUZpd&y=g5-%YS&fLFWLtpaCcmXD_8msS+gDKt3Z05
+z2<)s|bQSlslf^UYEW_nOgTc_3UdrV5_yM;)P6jtr;QB?9iihqiVzVWJ9f+{vDTaZZ
+zFO(hb*n6S$?d6TtmDTM%;V2R}%KW7#d4b_-UZ`DJSmOaN2_*u;Jh)!*m0J><Zs<}h
+z3%)N^1etiZb22E}VOhJ~(JF^B*tZYGw!Q881)HDA+K+_F^K!Wcul;~~6~brP=b{-s
+z@97N0IhWJ_+2y);Q4yhv%#c&7$=4LatWI6?X}CVQ^0`N}5@{DWnUOL|5t$0h<Xx;s
+zxg=vfO~y`{40qmSFsO?)AML3sS-fJO$7dCVF9NPaEjMw3OQ&gW$V%XdhpsNFYb}dp
+zQr82+%>T$!sG4fb!YDp4@V$i}@FPS2>*e*J;(7%UP}S%n8=f1s@DsRRwk<d)7!VeA
+zP-IB8E;tItiDHUP-MDFC7cSW<i7@0vp{-UNhdwOa#higX3;XaGK7Y&1S}4IcAT6w+
+zY~Y230AyRC!Z7zv%}CACNX=<vO{9&Np%NvEQdWr3S8G#O+G~_VMX3}~Rd!HQ2%kD{
+zB7L!uFZOml`J{NgRqHp{2_<VJhTe3`8PU@MkRAp4%k%YYX#t1^U#zU-nQ7+M2gyZB
+z<|2uqyFpu`gDgh16itNH9V(jhan&VAtuquV+dM9GOAwyvw`*dCT#FFiVI*`mjODr7
+z)svU|1zCzNjI7R^JfzW=&So=Ny4Qy3(Z4vDZa7-?rDN01Xm1}o0{fj_+VGLSks_jn
+zkE1mbz$Zx4&XB<v8PUoow8v@R`U7nzh&??*JlS4F$50hU6^SY?oxmjO<@|WkN?xg=
+zb89@=mAtB7>YSB{WcS$65t7H~squR!qP>c~-_GESB0*~sgXpCw`UpS@x6qGS3}Bh4
+z>llilj@97Qq3X9!F;0+2FpUXJlC@b}r<f<{BEO-7Vk7|Eq^Fa_rs%o#3@oJo0-x!~
+zb#A6LF(f&f37Dxz{+tZNXiuFWMPc;k$D<&s7#KgsU;}t(BsD_tN6}518su<I^9*FF
+z4l+T~ckl&iz7g7N3utY6cG0S#Ez{w(X|u<;){CM2E~gjo4aEyTALIS~Uw(b<h|>|I
+WR88Xoq$VJ3xEHPWBS>0#9{3kJg;=%#
+
