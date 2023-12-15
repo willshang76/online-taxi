@@ -1,10 +1,12 @@
 package com.zhitong.apipassenger.controller;
 
 import com.zhitong.apipassenger.requestEntity.GetVerificationCodeRequest;
+import com.zhitong.apipassenger.requestEntity.VerifyCodeRequest;
 import com.zhitong.apipassenger.service.VerificationService;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +21,10 @@ public class VerificationCodeController {
         String phoneNumber = requestBody.getPhoneNumber();
         System.out.println("phoneNumber = " + phoneNumber);
         return verificationService.generateVerificationCode(phoneNumber);
+    }
+
+    @PostMapping("verify-code")
+    public ResponseResult verifyCode(@RequestBody VerifyCodeRequest verifyCodeRequest){
+        return verificationService.verifyCode(verifyCodeRequest.getPhoneNumber(), verifyCodeRequest.getCode());
     }
 }

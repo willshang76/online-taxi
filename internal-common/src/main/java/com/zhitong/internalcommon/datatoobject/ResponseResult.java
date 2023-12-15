@@ -18,4 +18,12 @@ public class ResponseResult<T> {
     public static <T> ResponseResult success(T payload) {
         return new ResponseResult().setCode(ResponseStatus.SUCCESS.getCode()).setMessage(ResponseStatus.SUCCESS.getMessage()).setPayload(payload);
     }
+
+    public static <T> ResponseResult fail() {
+        return new ResponseResult().setCode(ResponseStatus.FAIL.getCode()).setMessage(ResponseStatus.FAIL.getMessage());
+    }
+
+    public static <T> ResponseResult fail(int code, String message) {
+        return new ResponseResult().setCode(code).setMessage(message);
+    }
 }
