@@ -67,7 +67,7 @@ public class VerificationService {
         String verficationCodeInRedis = stringRedisTemplate.opsForValue().get(verficationCodeKey);
         System.out.println("verficationCodeInRedis = " + verficationCodeInRedis);
 
-        // Verify the Code
+        // Verify the Code ""/null
         if (Strings.isNullOrEmpty(verficationCodeInRedis)) {
             return ResponseResult.fail(ResponseStatus.VERIFICATION_ERROR.getCode(), ResponseStatus.VERIFICATION_ERROR.getMessage());
         }
