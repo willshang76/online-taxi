@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Set up the code for verifying the code.&#10;Retrieve the code in redis and verify.">
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Update the comment to specify that we are checking the code is empty and null.">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/PassengerUserApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/verification-code/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/verification-code/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +40,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="verificationE2E" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="verifyCodeE2E" />
@@ -79,7 +88,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "verificationE2E",
+    "git-widget-placeholder": "passenger-user-service",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "/Users/qianzhang/Desktop/projects/OnlineTaxi/online-taxi/verification-code/src/main/resources",
     "node.js.detected.package.eslint": "true",
@@ -111,13 +120,26 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PassengerApplication">
+  <component name="RunManager" selected="Spring Boot.PassengerUserApplication">
     <configuration name="PassengerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="api-passenger" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhitong.apipassenger.PassengerApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.zhitong.apipassenger.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassengerUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="passenger-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhitong.passengeruser.PassengerUserApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhitong.passengeruser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.PassengerUserApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
         <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
         <item itemvalue="Spring Boot.PassengerApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
-        <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702600550618</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Update the comment to specify that we are checking the code is empty and null.">
+      <option name="closed" value="true" />
+      <created>1702793544365</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702793544365</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +337,8 @@
     <MESSAGE value="Add VerificationCodeApplication.java to the project." />
     <MESSAGE value="Finish passenger service verification code api." />
     <MESSAGE value="Set up the code for verifying the code.&#10;Retrieve the code in redis and verify." />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up the code for verifying the code.&#10;Retrieve the code in redis and verify." />
+    <MESSAGE value="Update the comment to specify that we are checking the code is empty and null." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the comment to specify that we are checking the code is empty and null." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
