@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Update the comment to specify that we are checking the code is empty and null.">
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/passenger-user/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/PassengerUserApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Set up the PassengerUserApplication with skeleton code.">
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/constants/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/constants/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verification-code/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/verification-code/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/PassengerUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/PassengerUserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,31 +75,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "passenger-user-service",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "/Users/qianzhang/Desktop/projects/OnlineTaxi/online-taxi/verification-code/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "spring.boot",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;passenger-user-service&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/qianzhang/Desktop/projects/OnlineTaxi/online-taxi/verification-code/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;spring.boot&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/verification-code/src/main/resources" />
@@ -201,6 +199,7 @@
       <workItem from="1701583956958" duration="5952000" />
       <workItem from="1702002841739" duration="3478000" />
       <workItem from="1702580594545" duration="1244000" />
+      <workItem from="1702923680097" duration="2871000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme file.">
       <option name="closed" value="true" />
@@ -298,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702793544365</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Set up the PassengerUserApplication with skeleton code.">
+      <option name="closed" value="true" />
+      <created>1702797631169</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702797631169</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +345,8 @@
     <MESSAGE value="Finish passenger service verification code api." />
     <MESSAGE value="Set up the code for verifying the code.&#10;Retrieve the code in redis and verify." />
     <MESSAGE value="Update the comment to specify that we are checking the code is empty and null." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the comment to specify that we are checking the code is empty and null." />
+    <MESSAGE value="Set up the PassengerUserApplication with skeleton code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up the PassengerUserApplication with skeleton code." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
