@@ -1,9 +1,11 @@
 package com.zhitong.apipassenger.service;
 
 import com.google.common.base.Strings;
+import com.zhitong.apipassenger.serviceclient.PassengerUserClient;
 import com.zhitong.apipassenger.serviceclient.VerificationCodeClient;
 import com.zhitong.internalcommon.constant.ResponseStatus;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
+import com.zhitong.internalcommon.request.LoginRequest;
 import com.zhitong.internalcommon.response.DigitalCodeResponse;
 import com.zhitong.internalcommon.response.VerifiedTokenResponse;
 import net.sf.json.JSONObject;
@@ -21,6 +23,9 @@ public class VerificationService {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private PassengerUserClient passengerUserClient;
 
     private final String verificationCodeKeyPrefix = "verification-code:";
 
@@ -76,6 +81,9 @@ public class VerificationService {
         }
 
         // Check user information in Database
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setPhoneNumber(phoneNumber);
+        passengerUserClient.insertAsNeeded(loginRequest);
 
         // Generate token
 

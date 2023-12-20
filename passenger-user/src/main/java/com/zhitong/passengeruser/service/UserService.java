@@ -1,6 +1,7 @@
 package com.zhitong.passengeruser.service;
 
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
+import com.zhitong.passengeruser.constants.Status;
 import com.zhitong.passengeruser.entity.User;
 import com.zhitong.passengeruser.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class UserService {
@@ -37,9 +39,14 @@ public class UserService {
         });
 
         // Check if the user exists.
-
-        // Insert user if the user doesn't exist.
-
+        if (users.isEmpty()) {
+            // Insert user if the user doesn't exist.
+            User newUser = new User();
+            newUser.setPhoneNumber(phoneNumber);
+            newUser.setName("random name" + UUID.randomUUID().toString().substring(0,5));
+            newUser.setStatus(Status.ACTIVE);
+            userMapper.insert(newUser);
+        }
 
         return ResponseResult.success();
     }
