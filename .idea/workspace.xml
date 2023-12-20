@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Connect to MySQL DB and retrieve the record based on the phone number.">
-      <change afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/serviceclient/PassengerUserClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/Jwt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/PassengerUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/PassengerUserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -36,7 +33,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="verificationE2E" />
+        <entry key="$PROJECT_DIR$" value="passenger-user-service" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="verifyCodeE2E" />
@@ -84,7 +81,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "passenger-user-service",
+    "git-widget-placeholder": "3jwt",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "/Users/qianzhang/Desktop/projects/OnlineTaxi/online-taxi",
     "node.js.detected.package.eslint": "true",
@@ -116,7 +113,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PassengerUserApplication">
+  <component name="RunManager" selected="Spring Boot.VerificationCodeApplication">
     <configuration name="PassengerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="api-passenger" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhitong.apipassenger.PassengerApplication" />
@@ -173,9 +170,9 @@
       <list>
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
         <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
-        <item itemvalue="Spring Boot.PassengerUserApplication" />
         <item itemvalue="Spring Boot.PassengerApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
+        <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
       </list>
     </recent_temporary>
   </component>
