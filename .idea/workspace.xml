@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Connect to MySQL DB and retrieve the record based on the phone number.">
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/Jwt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Create the jwt util and implement the generateToken method.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_14_23,_12_35_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_14_23__12_35_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_14_23,_12_35_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_14_23__12_35_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/Jwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/Jwt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +26,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
@@ -91,7 +97,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "spring.boot",
+    "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -113,7 +119,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.VerificationCodeApplication">
+  <component name="RunManager" selected="Application.Jwt">
+    <configuration name="Jwt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhitong.internalcommon.util.Jwt" />
+      <module name="internal-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhitong.internalcommon.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PassengerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="api-passenger" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhitong.apipassenger.PassengerApplication" />
@@ -168,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Jwt" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
         <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
         <item itemvalue="Spring Boot.PassengerApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
-        <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -196,6 +215,7 @@
       <workItem from="1702580594545" duration="1244000" />
       <workItem from="1702923680097" duration="2871000" />
       <workItem from="1702943562610" duration="2991000" />
+      <workItem from="1703222352647" duration="1364000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme file.">
       <option name="closed" value="true" />
@@ -309,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702943642100</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Create the jwt util and implement the generateToken method.">
+      <option name="closed" value="true" />
+      <created>1703056649755</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703056649756</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +379,8 @@
     <MESSAGE value="Update the comment to specify that we are checking the code is empty and null." />
     <MESSAGE value="Set up the PassengerUserApplication with skeleton code." />
     <MESSAGE value="Connect to MySQL DB and retrieve the record based on the phone number." />
-    <option name="LAST_COMMIT_MESSAGE" value="Connect to MySQL DB and retrieve the record based on the phone number." />
+    <MESSAGE value="Create the jwt util and implement the generateToken method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create the jwt util and implement the generateToken method." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
