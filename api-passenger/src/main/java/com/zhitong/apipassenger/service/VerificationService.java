@@ -1,13 +1,16 @@
 package com.zhitong.apipassenger.service;
 
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableMap;
 import com.zhitong.apipassenger.serviceclient.PassengerUserClient;
 import com.zhitong.apipassenger.serviceclient.VerificationCodeClient;
+import com.zhitong.internalcommon.constant.JwtInfo;
 import com.zhitong.internalcommon.constant.ResponseStatus;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
 import com.zhitong.internalcommon.request.LoginRequest;
 import com.zhitong.internalcommon.response.DigitalCodeResponse;
 import com.zhitong.internalcommon.response.VerifiedTokenResponse;
+import com.zhitong.internalcommon.util.Jwt;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -31,10 +34,11 @@ public class VerificationService {
 
     /**
      * Generate verifycation code
+     *
      * @param phoneNumber
      * @return ResponseResult
      */
-    public ResponseResult generateVerificationCode(String phoneNumber){
+    public ResponseResult generateVerificationCode(String phoneNumber) {
         // Get the code from the verification service API
         /*System.out.println("Call verification service to get code.");
         String verificaitonCode = "12345678";*/
@@ -59,11 +63,12 @@ public class VerificationService {
 
     /**
      * Verify Code
+     *
      * @param phoneNumber
      * @param code
      * @return ResponseResult
      */
-    public ResponseResult  verifyCode(String phoneNumber, String code){
+    public ResponseResult verifyCode(String phoneNumber, String code) {
 
         // Generate the key of the verification code in the redis
         String verficationCodeKey = generateVerificationCodeKey(phoneNumber);
@@ -86,10 +91,11 @@ public class VerificationService {
         passengerUserClient.insertAsNeeded(loginRequest);
 
         // Generate token
+        String jwtToken = Jwt.generateToken(ImmutableMap.of(JwtInfo.PHONE_KEY, phoneNumber, JwtInfo.USER_TYPE_KEY, JwtInfo.PASSENGER_TYPE));
 
         // return response
         VerifiedTokenResponse verifiedTokenResponse = new VerifiedTokenResponse();
-        verifiedTokenResponse.setToken("Token String");
+        verifiedTokenResponse.setToken(jwtToken);
         return ResponseResult.success(verifiedTokenResponse);
     }
 

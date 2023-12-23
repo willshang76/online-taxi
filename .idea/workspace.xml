@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Create the jwt util and implement the generateToken method.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_14_23,_12_35_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_14_23__12_35_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_14_23,_12_35_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_14_23__12_35_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Implement the decryptToken method in the jwt util class and verify the code works properly.">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/JwtInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/datatoobject/JwtTokenResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/Jwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/Jwt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +95,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "service.view.auto.scroll.from.source": "true",
     "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   }
@@ -187,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Jwt" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
         <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
+        <item itemvalue="Spring Boot.PassengerUserApplication" />
         <item itemvalue="Spring Boot.PassengerApplication" />
-        <item itemvalue="Spring Boot.VerificationCodeApplication" />
+        <item itemvalue="Application.Jwt" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +214,7 @@
       <workItem from="1702580594545" duration="1244000" />
       <workItem from="1702923680097" duration="2871000" />
       <workItem from="1702943562610" duration="2991000" />
-      <workItem from="1703222352647" duration="1364000" />
+      <workItem from="1703222352647" duration="4558000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme file.">
       <option name="closed" value="true" />
@@ -337,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703056649756</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Implement the decryptToken method in the jwt util class and verify the code works properly.">
+      <option name="closed" value="true" />
+      <created>1703223891950</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703223891950</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +387,8 @@
     <MESSAGE value="Set up the PassengerUserApplication with skeleton code." />
     <MESSAGE value="Connect to MySQL DB and retrieve the record based on the phone number." />
     <MESSAGE value="Create the jwt util and implement the generateToken method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create the jwt util and implement the generateToken method." />
+    <MESSAGE value="Implement the decryptToken method in the jwt util class and verify the code works properly." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement the decryptToken method in the jwt util class and verify the code works properly." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
