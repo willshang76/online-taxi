@@ -40,7 +40,7 @@ public class JwtVerificationInterceptor implements HandlerInterceptor {
 
         if (!verifyResult) {
             PrintWriter out = response.getWriter();
-            out.print(JSONObject.fromObject(ResponseResult.fail(ResponseStatus.FAIL.getCode(), errorMessage).toString()));
+            out.print(JSONObject.fromObject(ResponseResult.fail(ResponseStatus.FAIL.getCode(), errorMessage)).toString());
         }
 
         return verifyResult;
