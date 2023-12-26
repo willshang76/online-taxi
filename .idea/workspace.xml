@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Implement the jwt interceptor.">
-      <change afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Config the interceptor and add the test controller.">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/RedisGeneral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/JwtVerificationInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/JwtVerificationInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/Jwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/Jwt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +215,7 @@
       <workItem from="1702580594545" duration="1244000" />
       <workItem from="1702923680097" duration="2871000" />
       <workItem from="1702943562610" duration="2991000" />
-      <workItem from="1703222352647" duration="7424000" />
+      <workItem from="1703222352647" duration="13008000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme file.">
       <option name="closed" value="true" />
@@ -359,7 +361,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703400747571</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Config the interceptor and add the test controller.">
+      <option name="closed" value="true" />
+      <created>1703401713390</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1703401713390</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +415,8 @@
     <MESSAGE value="Implement the decryptToken method in the jwt util class and verify the code works properly." />
     <MESSAGE value="Wire everything up by generating the token in the api passenger component." />
     <MESSAGE value="Implement the jwt interceptor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement the jwt interceptor." />
+    <MESSAGE value="Config the interceptor and add the test controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="Config the interceptor and add the test controller." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -44,7 +44,7 @@ public class Jwt {
         DecodedJWT jwt = JWT.require(Algorithm.HMAC256(SIGNATURE)).build().verify(token);
         JwtTokenResult result = new JwtTokenResult();
 
-        return result.setPhoneNumber(jwt.getClaim(PHONE_KEY).toString()).setUserType(jwt.getClaim(USER_TYPE_KEY).toString());
+        return result.setPhoneNumber(jwt.getClaim(PHONE_KEY).asString()).setUserType(jwt.getClaim(USER_TYPE_KEY).asString());
     }
 
 //    public static void main(String[] args) {
