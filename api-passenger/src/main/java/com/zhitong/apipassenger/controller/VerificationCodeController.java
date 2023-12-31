@@ -17,14 +17,14 @@ public class VerificationCodeController {
     private VerificationService verificationService;
 
     @GetMapping("/verification-code")
-    public ResponseResult verificationCode(@RequestBody GetVerificationCodeRequest requestBody){
+    public ResponseResult<Void> verificationCode(@RequestBody GetVerificationCodeRequest requestBody) {
         String phoneNumber = requestBody.getPhoneNumber();
         System.out.println("phoneNumber = " + phoneNumber);
         return verificationService.generateVerificationCode(phoneNumber);
     }
 
     @PostMapping("verify-code")
-    public ResponseResult verifyCode(@RequestBody VerifyCodeRequest verifyCodeRequest){
+    public ResponseResult verifyCode(@RequestBody VerifyCodeRequest verifyCodeRequest) {
         return verificationService.verifyCode(verifyCodeRequest.getPhoneNumber(), verifyCodeRequest.getCode());
     }
 }

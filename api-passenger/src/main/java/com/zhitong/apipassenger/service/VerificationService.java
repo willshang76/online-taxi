@@ -33,10 +33,10 @@ public class VerificationService {
     /**
      * Generate verifycation code
      *
-     * @param phoneNumber
+     * @param phoneNumber the phone number receives the code.
      * @return ResponseResult
      */
-    public ResponseResult generateVerificationCode(String phoneNumber) {
+    public ResponseResult<Void> generateVerificationCode(String phoneNumber) {
         // Get the code from the verification service API
         /*System.out.println("Call verification service to get code.");
         String verificaitonCode = "12345678";*/
@@ -66,7 +66,7 @@ public class VerificationService {
      * @param code
      * @return ResponseResult
      */
-    public ResponseResult verifyCode(String phoneNumber, String code) {
+    public ResponseResult<VerifiedTokenResponse> verifyCode(String phoneNumber, String code) {
 
         // Generate the key of the verification code in the redis
         String verficationCodeKey = RedisGeneral.generateVerificationCodeKey(phoneNumber);
@@ -89,14 +89,17 @@ public class VerificationService {
         passengerUserClient.insertAsNeeded(loginRequest);
 
         // Generate token
-        String jwtToken = Jwt.generateToken(ImmutableMap.of(JwtInfo.PHONE_KEY, phoneNumber, JwtInfo.USER_TYPE_KEY, JwtInfo.PASSENGER_TYPE));
+        String accessToken = Jwt.generateToken(ImmutableMap.of(JwtInfo.PHONE_KEY, phoneNumber, JwtInfo.USER_TYPE_KEY, JwtInfo.PASSENGER_TYPE, JwtInfo.TOKEN_TYPE, JwtInfo.Token.ACCESS_TOKEN.toString()));
+        String refreshToken = Jwt.generateToken(ImmutableMap.of(JwtInfo.PHONE_KEY, phoneNumber, JwtInfo.USER_TYPE_KEY, JwtInfo.PASSENGER_TYPE, JwtInfo.TOKEN_TYPE, JwtInfo.Token.REFRESH_TOKEN.toString()));
 
         // Store token in Redis
-        stringRedisTemplate.opsForValue().set(RedisGeneral.generateTokenKey(phoneNumber, JwtInfo.PASSENGER_TYPE), jwtToken, 30, TimeUnit.DAYS);
+        stringRedisTemplate.opsForValue().set(RedisGeneral.generateTokenKey(phoneNumber, JwtInfo.PASSENGER_TYPE, JwtInfo.Token.ACCESS_TOKEN.toString()), accessToken, 30, TimeUnit.DAYS);
+        stringRedisTemplate.opsForValue().set(RedisGeneral.generateTokenKey(phoneNumber, JwtInfo.PASSENGER_TYPE, JwtInfo.Token.REFRESH_TOKEN.toString()), refreshToken, 40, TimeUnit.DAYS);
 
         // return response
         VerifiedTokenResponse verifiedTokenResponse = new VerifiedTokenResponse();
-        verifiedTokenResponse.setToken(jwtToken);
+        verifiedTokenResponse.setAccessToken(accessToken);
+        verifiedTokenResponse.setRefreshToken(refreshToken);
         return ResponseResult.success(verifiedTokenResponse);
     }
 

@@ -4,6 +4,7 @@ import com.auth0.jwt.exceptions.AlgorithmMismatchException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.google.common.base.Strings;
+import com.zhitong.internalcommon.constant.JwtInfo;
 import com.zhitong.internalcommon.constant.ResponseStatus;
 import com.zhitong.internalcommon.datatoobject.JwtTokenResult;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
@@ -53,7 +54,7 @@ public class JwtVerificationInterceptor implements HandlerInterceptor {
             String phoneNumber = tokenResult.getPhoneNumber();
             String userType = tokenResult.getUserType();
 
-            String tokenRedisKey = RedisGeneral.generateTokenKey(phoneNumber, userType);
+            String tokenRedisKey = RedisGeneral.generateTokenKey(phoneNumber, userType, JwtInfo.Token.ACCESS_TOKEN.toString());
 
             String tokenValue = stringRedisTemplate.opsForValue().get(tokenRedisKey);
             System.out.println("tokenValue = " + tokenValue);
