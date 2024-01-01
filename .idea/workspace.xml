@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Store the token in redis and update the interceptor to check if the jwt token is still valid by checking if it exits in redis.">
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Update the code to support access and refresh tokens.">
+      <change afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/JwtController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/requestEntity/RefreshTokenRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/JwtService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/VerificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/VerificationCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/JwtVerificationInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/JwtVerificationInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/VerificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/JwtInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/JwtInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/datatoobject/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/datatoobject/ResponseResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/response/VerifiedTokenResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/response/VerifiedTokenResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/RedisGeneral.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/util/RedisGeneral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/ResponseStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/ResponseStatus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,10 +187,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.PassengerApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
         <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
         <item itemvalue="Spring Boot.PassengerUserApplication" />
-        <item itemvalue="Spring Boot.PassengerApplication" />
         <item itemvalue="Application.Jwt" />
       </list>
     </recent_temporary>
@@ -218,7 +216,7 @@
       <workItem from="1702923680097" duration="2871000" />
       <workItem from="1702943562610" duration="2991000" />
       <workItem from="1703222352647" duration="13008000" />
-      <workItem from="1703951917136" duration="3527000" />
+      <workItem from="1703951917136" duration="6863000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme file.">
       <option name="closed" value="true" />
@@ -372,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703401713390</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Update the code to support access and refresh tokens.">
+      <option name="closed" value="true" />
+      <created>1704001210286</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1704001210287</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +425,8 @@
     <MESSAGE value="Wire everything up by generating the token in the api passenger component." />
     <MESSAGE value="Implement the jwt interceptor." />
     <MESSAGE value="Config the interceptor and add the test controller." />
-    <option name="LAST_COMMIT_MESSAGE" value="Config the interceptor and add the test controller." />
+    <MESSAGE value="Update the code to support access and refresh tokens." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the code to support access and refresh tokens." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

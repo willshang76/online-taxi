@@ -7,10 +7,11 @@ public enum ResponseStatus {
      * 1000 - 1099 verification related codes.
      */
     VERIFICATION_ERROR(1099, "Verification code error."),
-    SUCCESS(201, "success"),
-    FAIL(0, "fail")
 
-    ;
+    INVALID_TOKEN(2001, "Token is invalid"),
+
+    SUCCESS(201, "success"),
+    FAIL(0, "fail");
 
     @Getter
     private int code;
