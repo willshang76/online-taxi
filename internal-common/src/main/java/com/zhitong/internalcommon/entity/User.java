@@ -1,8 +1,8 @@
-package com.zhitong.passengeruser.entity;
+package com.zhitong.internalcommon.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.zhitong.passengeruser.constants.Gender;
-import com.zhitong.passengeruser.constants.Status;
+import com.zhitong.internalcommon.constant.Gender;
+import com.zhitong.internalcommon.constant.Status;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -15,6 +15,7 @@ public class User {
     private String name;
     private Gender gender;
     private Status status;
+    private String avatarUrl;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

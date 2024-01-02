@@ -1,8 +1,8 @@
 package com.zhitong.passengeruser.service;
 
+import com.zhitong.internalcommon.constant.Status;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
-import com.zhitong.passengeruser.constants.Status;
-import com.zhitong.passengeruser.entity.User;
+import com.zhitong.internalcommon.entity.User;
 import com.zhitong.passengeruser.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    public ResponseResult loginAndCreateUserWhenNeed(String phoneNumber){
+    public ResponseResult loginAndCreateUserWhenNeed(String phoneNumber) {
         System.out.println("phoneNumber = " + phoneNumber);
         // Search user based on the phone number in Mysql.
         Map<String, Object> phoneMap = new HashMap();
@@ -43,7 +43,7 @@ public class UserService {
             // Insert user if the user doesn't exist.
             User newUser = new User();
             newUser.setPhoneNumber(phoneNumber);
-            newUser.setName("random name" + UUID.randomUUID().toString().substring(0,5));
+            newUser.setName("random name" + UUID.randomUUID().toString().substring(0, 5));
             newUser.setStatus(Status.ACTIVE);
             userMapper.insert(newUser);
         }
