@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Implement the skeleton of the getUser API.">
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Refactor the code to reuse the User entity for DB and the response of the getUser API.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/constants/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/Gender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/constants/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/entity/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" afterDir="false" />
     </list>
@@ -224,7 +222,7 @@
       <workItem from="1702923680097" duration="2871000" />
       <workItem from="1702943562610" duration="2991000" />
       <workItem from="1703222352647" duration="13008000" />
-      <workItem from="1703951917136" duration="14810000" />
+      <workItem from="1703951917136" duration="15476000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme file.">
       <option name="closed" value="true" />
@@ -402,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704179865015</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Refactor the code to reuse the User entity for DB and the response of the getUser API.">
+      <option name="closed" value="true" />
+      <created>1704182144545</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1704182144545</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +458,8 @@
     <MESSAGE value="Update the code to support access and refresh tokens." />
     <MESSAGE value="Finish the implementation of the JWT two token authorization logic." />
     <MESSAGE value="Implement the skeleton of the getUser API." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement the skeleton of the getUser API." />
+    <MESSAGE value="Refactor the code to reuse the User entity for DB and the response of the getUser API." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor the code to reuse the User entity for DB and the response of the getUser API." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

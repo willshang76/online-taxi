@@ -2,8 +2,6 @@ package com.zhitong.apipassenger.controller;
 
 import com.zhitong.apipassenger.service.UserService;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
-import com.zhitong.internalcommon.entity.User;
-import com.zhitong.internalcommon.response.GetUserResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +17,7 @@ public class UserController {
     }
 
     @GetMapping("/user")
-    public ResponseResult<User> getUser(HttpServletRequest request) {
+    public ResponseResult getUser(HttpServletRequest request) {
         return userService.getUser(request.getHeader("Authorization"));
     }
 }
