@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JwtController {
 
-    @Autowired
-    private JwtService jwtService;
+    private final JwtService jwtService;
+
+    public JwtController(JwtService jwtService) {
+        this.jwtService = jwtService;
+    }
 
     @PostMapping("/refresh-token")
     public ResponseResult<VerifiedTokenResponse> refreshToken(@RequestBody RefreshTokenRequest refreshTokenRequest) {

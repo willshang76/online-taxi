@@ -57,7 +57,6 @@ public class JwtVerificationInterceptor implements HandlerInterceptor {
             String tokenRedisKey = RedisGeneral.generateTokenKey(phoneNumber, userType, JwtInfo.Token.ACCESS_TOKEN.toString());
 
             String tokenValue = stringRedisTemplate.opsForValue().get(tokenRedisKey);
-            System.out.println("tokenValue = " + tokenValue);
             if (Strings.isNullOrEmpty(tokenValue)) {
                 verifyResult = false;
                 errorMessage = "No token record";
