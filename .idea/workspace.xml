@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Refactor the code to reuse the User entity for DB and the response of the getUser API.">
+      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/constant/UserTier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/converter/UserConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/serviceclient/PassengerUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-passenger/src/main/java/com/zhitong/apipassenger/serviceclient/PassengerUserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/response/GetUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/response/GetUserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/passenger-user/src/main/java/com/zhitong/passengeruser/service/UserService.java" afterDir="false" />
     </list>
@@ -22,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -98,7 +103,8 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "service.view.auto.scroll.from.source": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "settings.editor.splitter.proportion": "0.3058104",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -193,10 +199,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.PassengerUserApplication" />
-        <item itemvalue="Spring Boot.PassengerApplication" />
-        <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
+        <item itemvalue="Spring Boot.PassengerApplication" />
+        <item itemvalue="Spring Boot.PassengerUserApplication" />
+        <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
         <item itemvalue="Application.Jwt" />
       </list>
     </recent_temporary>
