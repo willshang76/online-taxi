@@ -25,11 +25,11 @@ public class Jwt {
         info.forEach(jwtBuilder::withClaim);
 
         // Set expiration date
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DATE, 7);
-        Date date = calendar.getTime();
-
-        jwtBuilder.withExpiresAt(date);
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.add(Calendar.DATE, 7);
+//        Date date = calendar.getTime();
+//
+//        jwtBuilder.withExpiresAt(date);
 
         // Sign the token
         return jwtBuilder.sign(Algorithm.HMAC256(SIGNATURE));
