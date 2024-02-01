@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Add VerificationCodeApplication.java to the project.">
-      <change afterPath="$PROJECT_DIR$/verification-code/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/VerificationCodeApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Set up the code for verifying the code.&#10;Retrieve the code in redis and verify.">
+      <change afterPath="$PROJECT_DIR$/verification-code/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/verification-code/src/main/java/com/zhitong/verificationcode/controller/DigitalCodeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +84,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "spring.boot",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

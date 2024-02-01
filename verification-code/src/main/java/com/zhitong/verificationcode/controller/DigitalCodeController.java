@@ -28,15 +28,17 @@ public class DigitalCodeController {
     }
 
     @GetMapping("/digitalCode2")
-    public ResponseResult digitalCode2(@RequestParam("size") int size){
+    public ResponseResult<DigitalCodeResponse> digitalCode2(@RequestParam("size") int size){
 
         DigitalCodeResponse digitalCodeResponse = new DigitalCodeResponse();
         digitalCodeResponse.setDigitalCode(generateCode(size));
 
         return ResponseResult.success(digitalCodeResponse);
     }
-
+    // 0.23 X 100 ==> 23 random 0 - 1 ==> 0.002342 ===> 2342
+    // 0 - 9 ==> 0.0034214, 1.0002131, 2.0901231 ==> 8 --> + 1
+    // ==> 1 - 9 ===> 9
     private int generateCode(int size) {
-        return (int) ((Math.random()*9 + 1) * Math.pow(10, size - 1));
+        return (int) ((Math.random()*8 + 1) * Math.pow(10, size - 1));
     }
 }
