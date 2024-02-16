@@ -3,6 +3,7 @@ package com.zhitong.passengeruser.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.zhitong.internalcommon.constant.Gender;
 import com.zhitong.internalcommon.constant.Status;
+import com.zhitong.internalcommon.constant.UserTier;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -15,7 +16,8 @@ public class User {
     private String name;
     private Gender gender;
     private Status status;
-    //    private String avatarUrl;
+    private String avatarUrl;
+    private UserTier userTier;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
