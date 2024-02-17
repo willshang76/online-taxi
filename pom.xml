@@ -21,6 +21,7 @@
         <module>internal-common</module>
         <module>verification-code</module>
         <module>passenger-user</module>
+        <module>map-service</module>
     </modules>
 
     <properties>
