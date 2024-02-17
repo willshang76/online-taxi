@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="Clean up the circular dependency and add the new fields to the user entity.">
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/datatoobject/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/datatoobject/UnitValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/request/GetDirectionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal-common/src/main/java/com/zhitong/internalcommon/response/GetDirectionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map-service/src/main/java/com/zhitong/map/MapApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map-service/src/main/java/com/zhitong/map/controller/DirectionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map-service/src/main/java/com/zhitong/map/service/DirectionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3e66a1cf-75a3-4407-90f6-50af186189a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map-service/src/main/java/com/zhitong/map/service/DirectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/map-service/src/main/java/com/zhitong/map/service/DirectionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,9 +190,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MapApplication" />
+        <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
         <item itemvalue="Spring Boot.PassengerUserApplication" />
         <item itemvalue="Spring Boot.VerificationCodeApplication" />
-        <item itemvalue="Spring Boot.ServiceRegistrationAndDiscoveryServiceApplication" />
         <item itemvalue="Spring Boot.PassengerApplication" />
       </list>
     </recent_temporary>
@@ -229,7 +219,7 @@
       <workItem from="1702943562610" duration="2991000" />
       <workItem from="1703222352647" duration="13008000" />
       <workItem from="1703951917136" duration="15476000" />
-      <workItem from="1708121863314" duration="4077000" />
+      <workItem from="1708121863314" duration="7019000" />
     </task>
     <task id="LOCAL-00001" summary="Add readme file.">
       <option name="closed" value="true" />
@@ -423,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708122855896</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Create the skeleton code for the direction API.">
+      <option name="closed" value="true" />
+      <created>1708131664124</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1708131664124</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +473,8 @@
     <MESSAGE value="Implement the skeleton of the getUser API." />
     <MESSAGE value="Refactor the code to reuse the User entity for DB and the response of the getUser API." />
     <MESSAGE value="Clean up the circular dependency and add the new fields to the user entity." />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean up the circular dependency and add the new fields to the user entity." />
+    <MESSAGE value="Create the skeleton code for the direction API." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create the skeleton code for the direction API." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
