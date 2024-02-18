@@ -22,6 +22,7 @@
         <module>verification-code</module>
         <module>passenger-user</module>
         <module>map-service</module>
+        <module>order-service</module>
     </modules>
 
     <properties>

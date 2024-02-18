@@ -1,9 +1,9 @@
 server:
-  port: 8084
+  port: 8085
 
 spring:
   application:
-    name: map-service
+    name: order-service
 
 eureka:
   client:
@@ -11,7 +11,3 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     preferIpAddress: true
-
-map:
-  google:
-    key: "AIzaSyB97RIiFZcHDfYs014IggurQJUx8nobKZU"
