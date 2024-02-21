@@ -11,34 +11,50 @@ import com.zhitong.internalcommon.request.GetDirectionRequest;
 import com.zhitong.internalcommon.response.GetDirectionResponse;
 import com.zhitong.internalcommon.response.GetPriceResponse;
 import com.zhitong.internalcommon.response.GetUserResponse;
-import com.zhitong.order.serviceclient.MapServiceClient;
-import com.zhitong.order.serviceclient.PassengerUserClient;
+import com.zhitong.order.asyncserviceclient.MapServiceClientAsync;
+import com.zhitong.order.asyncserviceclient.PassengerUserClientAsync;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.CompletableFuture;
 
 
 @Service
 public class PriceService {
 
-    private final MapServiceClient mapServiceClient;
-    private final PassengerUserClient passengerUserClient;
+    private static final Logger logger = LoggerFactory.getLogger(PriceService.class);
+
+    private final MapServiceClientAsync mapServiceClientAsync;
+    private final PassengerUserClientAsync passengerUserClientAsync;
     ImmutableMap<UserTier, Float> discountMap = ImmutableMap.of(UserTier.TIER_0, (float) 1.0, UserTier.TIER_VIP, (float) 0.9, UserTier.TIER_VIP1, (float) 0.8);
 
-    public PriceService(MapServiceClient mapServiceClient, PassengerUserClient passengerUserClient) {
-        this.mapServiceClient = mapServiceClient;
-        this.passengerUserClient = passengerUserClient;
+    public PriceService(MapServiceClientAsync mapServiceClientAsync, PassengerUserClientAsync passengerUserClientAsync) {
+        this.passengerUserClientAsync = passengerUserClientAsync;
+        this.mapServiceClientAsync = mapServiceClientAsync;
     }
 
     public ResponseResult<GetPriceResponse> getPrice(String phoneNumber, Location souLocation, Location desLocation) {
-        ResponseResult<GetUserResponse> userResponseResponseResult = passengerUserClient.getUser(phoneNumber);
-        ResponseResult<GetDirectionResponse> directionResponseResponseResult = mapServiceClient.getDirection(
+        CompletableFuture<ResponseResult<GetUserResponse>> userResponseResponseResultFuture = passengerUserClientAsync.getUser(phoneNumber);
+        CompletableFuture<ResponseResult<GetDirectionResponse>> directionResponseResponseResultFuture = mapServiceClientAsync.getDirection(
                 new GetDirectionRequest(souLocation, desLocation));
 
-        System.out.println("userResponseResponseResult = " + userResponseResponseResult);
-        System.out.println("directionResponseResponseResult = " + directionResponseResponseResult);
+        CompletableFuture.allOf(userResponseResponseResultFuture, directionResponseResponseResultFuture).join();
 
-        PriceOption priceOption = getPriceOption(userResponseResponseResult, directionResponseResponseResult);
+        try {
+            ResponseResult<GetUserResponse> userResponseResponseResult = userResponseResponseResultFuture.get();
+            ResponseResult<GetDirectionResponse> directionResponseResponseResult = directionResponseResponseResultFuture.get();
 
-        return ResponseResult.success(new GetPriceResponse(ImmutableList.of(priceOption)));
+            System.out.println("userResponseResponseResult = " + userResponseResponseResult);
+            System.out.println("directionResponseResponseResult = " + directionResponseResponseResult);
+
+            PriceOption priceOption = getPriceOption(userResponseResponseResult, directionResponseResponseResult);
+
+            return ResponseResult.success(new GetPriceResponse(ImmutableList.of(priceOption)));
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return ResponseResult.fail();
+        }
     }
 
     private PriceOption getPriceOption(ResponseResult<GetUserResponse> userResponseResponseResult, ResponseResult<GetDirectionResponse> directionResponseResponseResult) {
