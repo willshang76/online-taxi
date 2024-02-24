@@ -1,26 +1,49 @@
 package com.zhitong.map.service;
 
-import com.google.maps.DirectionsApi;
-import com.google.maps.DirectionsApiRequest;
-import com.google.maps.GeoApiContext;
-import com.google.maps.model.DirectionsLeg;
-import com.google.maps.model.DirectionsResult;
-import com.google.maps.model.DirectionsRoute;
-import com.google.maps.model.TravelMode;
+import com.google.maps.*;
+import com.google.maps.model.*;
 import com.zhitong.internalcommon.datatoobject.Location;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
 import com.zhitong.internalcommon.datatoobject.UnitValue;
+import com.zhitong.internalcommon.response.Geocode;
 import com.zhitong.internalcommon.response.GetDirectionResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.Stream;
+
 @Service
 @Slf4j
 public class DirectionService {
+    private static final int SECONDS_PER_MINUTE = 60;
     @Value("${map.google.key}")
     private String googleKey;
-    private static final int SECONDS_PER_MINUTE = 60;
+
+    public ResponseResult<Geocode> getCounty(Location curLocation) {
+        // Create a GeoApiContext object.
+        GeoApiContext context = new GeoApiContext.Builder()
+                .apiKey(googleKey)
+                .build();
+
+        GeocodingApiRequest request = GeocodingApi.newRequest(context);
+        request.latlng(new LatLng(Double.parseDouble(curLocation.getLatitude()), Double.parseDouble(curLocation.getLongitude())));
+        try {
+            GeocodingResult[] resultList = request.await();
+
+            Optional<AddressComponent> addressComp = Arrays.stream(resultList)
+                    .flatMap(geocodingResult -> Stream.of(geocodingResult.addressComponents))
+                    .filter(addressComponent -> Arrays.asList(addressComponent.types).contains(AddressComponentType.ADMINISTRATIVE_AREA_LEVEL_2)).findFirst();
+
+            return addressComp.isPresent() ? ResponseResult.success(new Geocode(addressComp.get().shortName)) : ResponseResult.success(new Geocode("DEFAULT"));
+
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return ResponseResult.fail();
+        }
+    }
 
     public ResponseResult<GetDirectionResponse> getDirection(Location souLocation, Location desLocation) {
         // Create a GeoApiContext object.
@@ -46,7 +69,7 @@ public class DirectionService {
             log.error(e.getMessage());
             return ResponseResult.fail();
         }
-        
+
         // Get the routes.
         DirectionsRoute[] routes = directionsResult.routes;
 

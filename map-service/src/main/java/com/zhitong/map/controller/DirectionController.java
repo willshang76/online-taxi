@@ -1,7 +1,9 @@
 package com.zhitong.map.controller;
 
+import com.zhitong.internalcommon.datatoobject.Location;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
 import com.zhitong.internalcommon.request.GetDirectionRequest;
+import com.zhitong.internalcommon.response.Geocode;
 import com.zhitong.internalcommon.response.GetDirectionResponse;
 import com.zhitong.map.service.DirectionService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,5 +22,10 @@ public class DirectionController {
     @PostMapping("/direction")
     public ResponseResult<GetDirectionResponse> getDirection(@RequestBody GetDirectionRequest request) {
         return directionService.getDirection(request.getSouLocation(), request.getDesLocation());
+    }
+
+    @PostMapping("/geocode")
+    public ResponseResult<Geocode> getGeocode(@RequestBody Location request) {
+        return directionService.getCounty(request);
     }
 }
