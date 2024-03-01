@@ -23,6 +23,7 @@
         <module>passenger-user</module>
         <module>map-service</module>
         <module>order-service</module>
+        <module>vehicle-service</module>
     </modules>
 
     <properties>
