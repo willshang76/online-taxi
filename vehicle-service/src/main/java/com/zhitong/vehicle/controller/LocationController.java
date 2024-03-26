@@ -21,4 +21,9 @@ public class LocationController {
     public ResponseResult<?> uploadLocation(@PathVariable("id") int vehicleId, @RequestBody Location currentLocation) {
         return locationService.uploadLocation(vehicleId, currentLocation);
     }
+
+    @PostMapping("/list-vehicles")
+    public ResponseResult<?> listVehiclesLocation(@RequestBody Location currentLocation) {
+        return locationService.listVehiclesLocation(currentLocation);
+    }
 }
