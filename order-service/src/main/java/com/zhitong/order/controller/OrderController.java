@@ -21,9 +21,8 @@ public class OrderController {
     }
 
     @GetMapping("/{orderId}/assign/{vehicleId}")
-    public ResponseResult<?> assignOrder(@PathVariable(name = "orderId") String orderId, @PathVariable(name = "vehicleId") String vehicleId) {
-        System.out.println("orderId = " + orderId);
-        System.out.println("vehicleId = " + vehicleId);
-        return ResponseResult.success();
+    public ResponseResult<?> assignOrder(@PathVariable(name = "orderId") int orderId, @PathVariable(name = "vehicleId") int vehicleId) {
+
+        return orderService.assignOrder(orderId, vehicleId);
     }
 }

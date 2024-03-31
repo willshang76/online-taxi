@@ -1,5 +1,6 @@
 package com.zhitong.order.service;
 
+import com.zhitong.internalcommon.constant.OrderStatus;
 import com.zhitong.internalcommon.datatoobject.Location;
 import com.zhitong.internalcommon.datatoobject.PriceOption;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
@@ -39,5 +40,13 @@ public class OrderService {
         orderRep.save(initailOrder);
 
         return ResponseResult.success(initailOrder);
+    }
+
+    public ResponseResult<?> assignOrder(int orderId, int vehicleId) {
+
+        System.out.println("orderId = " + orderId);
+        System.out.println("vehicleId = " + vehicleId);
+
+        return ResponseResult.success();
     }
 }

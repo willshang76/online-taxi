@@ -16,7 +16,10 @@ public class Order {
     private Integer id;
     private Integer vehicleId;
     private String phoneNumber;
-    private OrderStatus status;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status = OrderStatus.PENDING;
     private String oriLatitude;
     private String oriLongitude;
     private String desLatitude;
