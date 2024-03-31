@@ -52,7 +52,7 @@ public class OrderService {
         }
         Optional<Order> optionalPendingOrder = this.orderRep.findById(orderId);
 
-        if (!optionalPendingOrder.isPresent()) {
+        if (!optionalPendingOrder.isPresent() || optionalPendingOrder.get().getStatus() != OrderStatus.PENDING) {
             return ResponseResult.fail(ResponseStatus.ORDER_NOT_FOUND.getCode(), ResponseStatus.ORDER_NOT_FOUND.getMessage());
         }
 
@@ -61,6 +61,8 @@ public class OrderService {
         pendingOrder.setStatus(OrderStatus.ASSIGNED);
 
         orderRep.save(pendingOrder);
+
+        System.out.println("pendingOrder = " + pendingOrder);
 
         return ResponseResult.success(pendingOrder);
     }
