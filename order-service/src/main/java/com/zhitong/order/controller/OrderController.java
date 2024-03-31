@@ -20,7 +20,7 @@ public class OrderController {
         return orderService.initializeOrder(request.getPhoneNumber(), request.getSouLocation(), request.getDesLocation(), request.getVehicleType());
     }
 
-    @GetMapping("/{orderId}/assign/{vehicleId}")
+    @PostMapping("/{orderId}/assign/{vehicleId}")
     public ResponseResult<?> assignOrder(@PathVariable(name = "orderId") int orderId, @PathVariable(name = "vehicleId") int vehicleId) {
 
         return orderService.assignOrder(orderId, vehicleId);

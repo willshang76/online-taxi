@@ -8,6 +8,9 @@ public enum ResponseStatus {
      */
     VERIFICATION_ERROR(1099, "Verification code error."),
 
+    EXISTING_ORDER(2099, "Existing order conflicts."),
+    ORDER_NOT_FOUND(2019, "Order not found."),
+
     INVALID_TOKEN(2001, "Token is invalid"),
 
     SUCCESS(201, "success"),

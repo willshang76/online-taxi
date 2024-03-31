@@ -1,6 +1,7 @@
 package com.zhitong.order.service;
 
 import com.zhitong.internalcommon.constant.OrderStatus;
+import com.zhitong.internalcommon.constant.ResponseStatus;
 import com.zhitong.internalcommon.datatoobject.Location;
 import com.zhitong.internalcommon.datatoobject.PriceOption;
 import com.zhitong.internalcommon.datatoobject.ResponseResult;
@@ -9,6 +10,7 @@ import com.zhitong.order.entity.Order;
 import com.zhitong.order.repository.OrderRep;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -44,9 +46,22 @@ public class OrderService {
 
     public ResponseResult<?> assignOrder(int orderId, int vehicleId) {
 
-        System.out.println("orderId = " + orderId);
-        System.out.println("vehicleId = " + vehicleId);
+        List<Order> existingOrderList = this.orderRep.findByStatusAndVehicleId(OrderStatus.ASSIGNED, vehicleId);
+        if (!existingOrderList.isEmpty()) {
+            return ResponseResult.fail(ResponseStatus.EXISTING_ORDER.getCode(), ResponseStatus.EXISTING_ORDER.getMessage());
+        }
+        Optional<Order> optionalPendingOrder = this.orderRep.findById(orderId);
 
-        return ResponseResult.success();
+        if (!optionalPendingOrder.isPresent()) {
+            return ResponseResult.fail(ResponseStatus.ORDER_NOT_FOUND.getCode(), ResponseStatus.ORDER_NOT_FOUND.getMessage());
+        }
+
+        Order pendingOrder = optionalPendingOrder.get();
+        pendingOrder.setVehicleId(vehicleId);
+        pendingOrder.setStatus(OrderStatus.ASSIGNED);
+
+        orderRep.save(pendingOrder);
+
+        return ResponseResult.success(pendingOrder);
     }
 }
