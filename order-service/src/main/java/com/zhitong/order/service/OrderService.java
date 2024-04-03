@@ -44,7 +44,7 @@ public class OrderService {
         return ResponseResult.success(initailOrder);
     }
 
-    public ResponseResult<?> assignOrder(int orderId, int vehicleId) {
+    public synchronized ResponseResult<?> assignOrder(int orderId, int vehicleId) {
 
         List<Order> existingOrderList = this.orderRep.findByStatusAndVehicleId(OrderStatus.ASSIGNED, vehicleId);
         if (!existingOrderList.isEmpty()) {
